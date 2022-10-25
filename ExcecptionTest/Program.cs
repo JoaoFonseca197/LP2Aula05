@@ -7,8 +7,23 @@ namespace ExcecptionTest
         static void Main(string[] args)
         {
             Console.WriteLine("Inserira um número interiro:");
-            int i = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"O número inserido{i}");
+            try
+            {
+                int i = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (FormatException )
+            {
+                Console.WriteLine("Ocurreu Format erro: " );
+            }
+            catch(OverflowException)
+            {
+                Console.WriteLine("Ocurreu um overflow : ");
+            }
+            finally
+            {
+                Console.WriteLine("Obrigado por utilizar este programa");
+            }            
+            //Console.WriteLine($"O número inserido{i}");
         }
     }
 }
